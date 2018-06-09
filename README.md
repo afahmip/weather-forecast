@@ -1,5 +1,5 @@
 <h1  align="center">
-	<br>Tugas 2 Seleksi Asisten Labpro 2018
+	<br>Tugas 2 Seleksi Asisten Labpro 2018<br>
 </h1>
 
 # Weather Forecast App  
@@ -18,7 +18,7 @@ This OpenWeatherMap API is also the same. Users can ask for certain weather data
 - Current Weather data
 - 5 day / 3 hour forecast
 - 16 day / daily forecast
-- HIstorical data
+- Historical data
 - etc. You can see the list [here](https://openweathermap.org/api).
 
 ## Author

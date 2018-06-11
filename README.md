@@ -32,17 +32,28 @@ This OpenWeatherMap API is also the same. Users can ask for certain weather data
 src
 └───main
 	└───java
-		|	main.java
-		└───component
-		|   file112.txt
-		│   ...
-		└───model
+            |   class Main
+            |
+            └───component
+            |   |   class MainFrame
+            |   |   class DetailPanel
+            |   |   class SearchPanel
+            |
+            └───model
+                |   class Weather
 
 ```
+### Explanation
   
-## Class / Feature Checklist    
- - [ ] lorem ipsum  
-  
+## Class / Feature Checklist  
+### Main program  
+ - [ ] Class Main
+### Package Component
+ - [ ] Class MainFrame
+ - [ ] Class DetailPanel
+ - [ ] Class SearchPanel
+### Package Model
+ - [ ] Class Weather
   
 ## How to Install  
   

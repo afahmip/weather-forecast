@@ -35,5 +35,9 @@ public class SearchPanel extends JPanel {
     b1.setLayout(null);
     b1.setBackground(Color.yellow);
     add(b1);
+
+    JTextField searchInput = new JTextField("search city here...");
+    searchInput.setBounds(50,100, 200,30);
+    add(searchInput);
   }
 }

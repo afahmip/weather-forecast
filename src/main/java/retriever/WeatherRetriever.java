@@ -3,7 +3,7 @@ package main.java.retriever;
 import java.io.*;
 import java.net.*;
 
-public class Weather {
+public class WeatherRetriever {
 
   private final String USER_AGENT = "Mozilla/5.0";
   private final String APP_ID = "927ac7c564019420f279e4e7a156fa32";
@@ -12,7 +12,7 @@ public class Weather {
   private String cityId;
   private String getUrl;
 
-  public Weather(String cityId) {
+  public WeatherRetriever(String cityId) {
     this.cityId = cityId;
     this.getUrl = BASE_URL + this.cityId + "&appid=" + APP_ID;
   }

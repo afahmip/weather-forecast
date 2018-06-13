@@ -1,6 +1,6 @@
 package main.java.component;
 
-import main.java.retriever.Weather;
+import main.java.retriever.WeatherRetriever;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -12,16 +12,17 @@ public class MainFrame extends JFrame {
   public MainFrame() {
     super("Weather Forecast");
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    this.searchPanel = new SearchPanel();
+    getContentPane().add(this.searchPanel);
+    this.detailPanel = new DetailPanel();
+    getContentPane().add(this.detailPanel);
+
     setSize(1024,647);
     setVisible(true);
     setLayout(null);
 
-    this.searchPanel = new SearchPanel();
-    add(this.searchPanel);
-    this.detailPanel = new DetailPanel();
-    add(this.detailPanel);
-
-    Weather weather = new Weather("524901");
+    WeatherRetriever weather = new WeatherRetriever("524901");
     try{
       weather.sendGET();
     } catch(IOException e) {

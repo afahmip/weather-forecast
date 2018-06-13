@@ -46,19 +46,53 @@ src
 
 ```
 
-The source code is divided into two packages. One is package _component_ that stores interface component, and package _model_ that stores weather model. Package _component_ consists of class MainFrame (the main window), class DetailPanel (panel that show weather details), and class SearchPanel (panel that has search input and feature). Package _model_ consists of class Weather that handles weather scrapping data from OpenWeatherMap API.
+The source code is divided into two packages. One is package _component_ that stores interface component, and package _model_ that stores weather model. Package _component_ consists of class MainFrame (the main window), class DetailPanel (panel that show weather details), and class SearchPanel (panel that has search input and feature). Package _retriever_ consists of class WeatherRetriever that handles weather scrapping data from OpenWeatherMap API and class CityFinder which returns city ID from given city name.
 
 ## Class / Feature Checklist
 **_subject to change_**
-### Main program  
- - [ ] Class Main
-### Package Component
- - [ ] Class MainFrame
- - [ ] Class DetailPanel
- - [ ] Class SearchPanel
-### Package Model
- - [ ] Class Weather
-  
+
+<table>
+  <tr>
+    <th>Package</th>
+    <th>Class</th>
+    <th>Explanation</th>
+    <th>Check</th>
+  </tr>
+  <tr>
+    <td>main.java</td>
+    <td>Main</td>
+    <td>Can run component</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td rowspan="3">main.java.component</td>
+    <td>MainFrame</td>
+    <td>Create base component</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>DetailPanel</td>
+    <td>Create base component</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>SearchPanel</td>
+    <td>Create base component</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td rowspan="2">main.java.retriever</td>
+    <td>WeatherRetriever</td>
+    <td>Create GET request method</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>CityFinder</td>
+    <td>Create base class</td>
+    <td></td>
+  </tr>
+</table>
+
 ## How to Install  
   
   

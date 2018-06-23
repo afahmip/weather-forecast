@@ -1,9 +1,9 @@
 package main.java.component;
 
 import main.java.retriever.WeatherRetriever;
-
+import main.java.component.SearchPanel;
+import main.java.component.DetailPanel;
 import javax.swing.*;
-import java.io.IOException;
 
 public class MainFrame extends JFrame {
   private SearchPanel searchPanel;
@@ -22,11 +22,5 @@ public class MainFrame extends JFrame {
     setVisible(true);
     setLayout(null);
 
-//    WeatherRetriever weather = new WeatherRetriever("1650357");
-//    try{
-//      weather.sendGET();
-//    } catch(IOException e) {
-//      System.out.println("Error");
-//    }
   }
 }

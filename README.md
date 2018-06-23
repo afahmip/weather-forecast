@@ -77,19 +77,19 @@ The source code is divided into two packages. One is package _component_ that st
   </tr>
   <tr>
     <td>SearchPanel</td>
-    <td>Can input city ID</td>
-    <td></td>
+    <td>Can input city name</td>
+    <td>v</td>
   </tr>
   <tr>
     <td rowspan="2">main.java.retriever</td>
     <td>WeatherRetriever</td>
-    <td>Create GET request method</td>
-    <td></td>
+    <td>Retrieve weather data and save to json file</td>
+    <td>v</td>
   </tr>
   <tr>
     <td>CityFinder</td>
-    <td>Can find city name based on ID</td>
-    <td></td>
+    <td>Can find city ID based on name</td>
+    <td>v</td>
   </tr>
 </table>
 

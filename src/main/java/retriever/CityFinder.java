@@ -1,5 +1,6 @@
 package main.java.retriever;
 
+import me.xdrop.fuzzywuzzy.FuzzySearch;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -8,6 +9,8 @@ import org.json.simple.parser.ParseException;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class CityFinder {
 
@@ -31,17 +34,23 @@ public class CityFinder {
     }
   }
 
-  public void findCityId(String cityId) {
-//    for(int i = 0; i < this.citylist.size(); i++) {
-//
-//    }
+  public ArrayList<JSONObject> findCityId(String name) {
+    FuzzySearch fuzzy = new FuzzySearch();
+    ArrayList<JSONObject> cityResult = new ArrayList<JSONObject>();
+
     for(Object obj : this.citylist) {
       JSONObject tmp = (JSONObject) obj;
-      String tmpId = ((Number) tmp.get("id")).toString();
-      if(tmpId.equals(cityId)) {
-        System.out.println(tmp.get("name"));
+      String tmpName = tmp.get("name").toString();
+      if(fuzzy.ratio(tmpName.toLowerCase(), name.toLowerCase()) >= 90) {
+        // DEBUG
+        // System.out.println(tmpName + " " + tmp.get("id").toString() + " " + fuzzy.ratio(tmpName.toLowerCase(), name.toLowerCase()));
+        JSONObject result = new JSONObject();
+        result.put("id", tmp.get("id").toString());
+        result.put("name", tmpName);
+        cityResult.add(result);
       }
     }
+    return cityResult;
   }
 
 }

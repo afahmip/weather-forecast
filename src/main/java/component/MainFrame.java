@@ -22,11 +22,11 @@ public class MainFrame extends JFrame {
     setVisible(true);
     setLayout(null);
 
-    WeatherRetriever weather = new WeatherRetriever("524901");
-    try{
-      weather.sendGET();
-    } catch(IOException e) {
-      System.out.println("Error");
-    }
+//    WeatherRetriever weather = new WeatherRetriever("1650357");
+//    try{
+//      weather.sendGET();
+//    } catch(IOException e) {
+//      System.out.println("Error");
+//    }
   }
 }

@@ -3,6 +3,9 @@ package main.java.component;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import main.java.retriever.CityFinder;
 
 public class SearchPanel extends JPanel {
   private static class RoundedBorder implements Border {
@@ -25,19 +28,44 @@ public class SearchPanel extends JPanel {
     }
   }
 
+  private JButton searchButton;
+  private JTextField searchInput;
+  private CityFinder cityFinder;
+
   public SearchPanel() {
-    setBounds(0, 0, 301, 647);
+    setBounds(0, 0, 235, 647);
     setBackground(new Color(247,247,247));
+    setLayout(null);
 
-    JButton b1 = new JButton("button 1");
-    b1.setBorder(new RoundedBorder(10));
-    b1.setBounds(50,100,80,30);
-    b1.setLayout(null);
-    b1.setBackground(Color.yellow);
-    add(b1);
+    //setLayout (new BoxLayout (this, BoxLayout.Y_AXIS));
 
-    JTextField searchInput = new JTextField("search city here...");
-    searchInput.setBounds(50,100, 200,30);
-    add(searchInput);
+    initButton();
+    this.cityFinder = new CityFinder();
+
+    this.searchInput = new JTextField();
+    this.searchInput.setBounds(29,50, 175,33);
+    add(this.searchInput);
+  }
+
+  private void initButton() {
+    this.searchButton = new JButton("Find City");
+    this.searchButton.setBounds(29,100,175,33);
+    this.searchButton.setBorder(new RoundedBorder(10));
+    this.searchButton.setBackground(new Color(51, 51, 51));
+    this.searchButton.setForeground(new Color(51, 51, 51));
+
+    this.searchButton.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        String val = searchInput.getText();
+        findCity(val);
+      }
+    });
+
+    add(this.searchButton);
+  }
+
+  private void findCity(String cityId) {
+    this.cityFinder.findCityId(cityId);
   }
 }

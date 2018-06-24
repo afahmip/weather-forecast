@@ -33,7 +33,6 @@ public class MainController {
 
     try {
       weatherData = (JSONObject) parser.parse(new FileReader("./src/resource/result.json"));
-      System.out.println(weatherData.size());
     } catch (FileNotFoundException e) {
       System.out.println("Cannot find file!");
     } catch (ParseException e) {

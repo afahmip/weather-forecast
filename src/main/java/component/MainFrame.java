@@ -3,6 +3,9 @@ package main.java.component;
 import component.MainPanel;
 
 import javax.swing.*;
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 
 public class MainFrame extends JFrame {
 
@@ -11,6 +14,7 @@ public class MainFrame extends JFrame {
   public MainFrame() {
     super("Weather Forecast");
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    initFonts();
 
     this.mainPanel = new MainPanel();
     getContentPane().add(this.mainPanel);
@@ -18,5 +22,16 @@ public class MainFrame extends JFrame {
     setSize(1024,647);
     setVisible(true);
     setLayout(null);
+  }
+
+  private void initFonts() {
+    try {
+      GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+      ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("src/resource/fonts/VarelaRound-Regular.ttf")));
+    } catch (IOException e) {
+      e.printStackTrace();
+    } catch(FontFormatException e) {
+      e.printStackTrace();
+    }
   }
 }

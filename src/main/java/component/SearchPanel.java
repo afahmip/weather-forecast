@@ -3,13 +3,8 @@ package main.java.component;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.IOException;
 import java.util.ArrayList;
-
 import main.java.retriever.CityFinder;
-import main.java.retriever.WeatherRetriever;
 import org.json.simple.JSONObject;
 
 public class SearchPanel extends JPanel {
@@ -46,7 +41,6 @@ public class SearchPanel extends JPanel {
     //setLayout (new BoxLayout (this, BoxLayout.Y_AXIS));
 
     this.cityFinder = new CityFinder();
-
     this.searchInput = new JTextField();
     this.searchInput.setBounds(29,50, 175,33);
     add(this.searchInput);

@@ -23,9 +23,9 @@ public class MainPanel extends JPanel {
 
     this.searchPanel = new SearchPanel();
     add(this.searchPanel);
-    initSearchButton();
     this.detailPanel = new DetailPanel();
     add(this.detailPanel);
+    initSearchButton();
     this.mainController = new MainController();
   }
 
@@ -34,6 +34,7 @@ public class MainPanel extends JPanel {
     this.searchButton.setBounds(29,100,175,33);
     this.searchButton.setBackground(new Color(209, 209, 209));
     this.searchButton.setForeground(new Color(51, 51, 51));
+    add(this.searchButton);
 
     this.searchButton.addActionListener(new ActionListener() {
       @Override
@@ -44,8 +45,6 @@ public class MainPanel extends JPanel {
         updateWeatherData(mainController.parseWeatherData());
       }
     });
-
-    add(this.searchButton);
   }
 
   private void updateWeatherData(JSONObject data) {

@@ -9,7 +9,6 @@ import org.json.simple.parser.ParseException;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class CityFinder {
@@ -36,7 +35,7 @@ public class CityFinder {
 
   public ArrayList<JSONObject> findCityId(String name) {
     FuzzySearch fuzzy = new FuzzySearch();
-    ArrayList<JSONObject> cityResult = new ArrayList<JSONObject>();
+    ArrayList<JSONObject> cityResult = new ArrayList<>();
 
     for(Object obj : this.citylist) {
       JSONObject tmp = (JSONObject) obj;

@@ -12,7 +12,11 @@ public class WeatherRetriever {
   private String cityId;
   private String getUrl;
 
-  public WeatherRetriever(String cityId) {
+  public WeatherRetriever() {
+
+  }
+
+  public void initId(String cityId) {
     this.cityId = cityId;
     this.getUrl = BASE_URL + this.cityId + "&appid=" + APP_ID;
   }

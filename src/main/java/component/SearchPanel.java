@@ -36,6 +36,7 @@ public class SearchPanel extends JPanel {
   private JButton searchButton;
   private JTextField searchInput;
   private CityFinder cityFinder;
+  private String foundId;
 
   public SearchPanel() {
     setBounds(0, 0, 235, 647);
@@ -44,7 +45,6 @@ public class SearchPanel extends JPanel {
 
     //setLayout (new BoxLayout (this, BoxLayout.Y_AXIS));
 
-    initButton();
     this.cityFinder = new CityFinder();
 
     this.searchInput = new JTextField();
@@ -52,36 +52,22 @@ public class SearchPanel extends JPanel {
     add(this.searchInput);
   }
 
-  private void initButton() {
-    this.searchButton = new JButton("Find City");
-    this.searchButton.setBounds(29,100,175,33);
-//    this.searchButton.setBorder(new RoundedBorder(10));
-    this.searchButton.setBackground(new Color(209, 209, 209));
-    this.searchButton.setForeground(new Color(51, 51, 51));
-
-    this.searchButton.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        String val = searchInput.getText();
-        findCity(val);
-      }
-    });
-
-    add(this.searchButton);
-  }
-
-  private void findCity(String cityName) {
+  public void findCity() {
+    String cityName = this.searchInput.getText();
     ArrayList<JSONObject> cityResult = this.cityFinder.findCityId(cityName);
+    this.foundId = "";
+
     if (cityResult.size() == 1) {
-      String cityId = cityResult.get(0).get("id").toString();
-      getWeatherData(cityId);
+      this.foundId = cityResult.get(0).get("id").toString();
     } else if (cityResult.size() == 0) {
       notFound();
       repaint();
     } else if (cityResult.size() > 1) {
-
+      System.out.println("banyak");
     }
   }
+
+  public String getFoundId() { return this.foundId; }
 
   private void notFound() {
     JLabel error404 = new JLabel("404");
@@ -97,12 +83,4 @@ public class SearchPanel extends JPanel {
     add(notfound);
   }
 
-  private void getWeatherData(String cityId) {
-    WeatherRetriever retriever = new WeatherRetriever(cityId);
-    try {
-      retriever.sendGET();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-  }
 }

@@ -65,7 +65,7 @@ The source code is divided into two packages. One is package _component_ that st
     <td></td>
   </tr>
   <tr>
-    <td rowspan="3">main.java.component</td>
+    <td rowspan="4">main.java.component</td>
     <td>MainFrame</td>
     <td>Create base component</td>
     <td></td>
@@ -81,7 +81,12 @@ The source code is divided into two packages. One is package _component_ that st
     <td>v</td>
   </tr>
   <tr>
-    <td rowspan="2">main.java.retriever</td>
+    <td>MainPanel</td>
+    <td>Interract between SearchPanel and DetailPanel</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td rowspan="3">main.java.retriever</td>
     <td>WeatherRetriever</td>
     <td>Retrieve weather data and save to json file</td>
     <td>v</td>
@@ -90,6 +95,11 @@ The source code is divided into two packages. One is package _component_ that st
     <td>CityFinder</td>
     <td>Can find city ID based on name</td>
     <td>v</td>
+  </tr>
+  <tr>
+    <td>MainController</td>
+    <td>Interract between components and handle data interraction</td>
+    <td></td>
   </tr>
 </table>
 

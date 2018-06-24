@@ -1,26 +1,22 @@
 package main.java.component;
 
-import main.java.retriever.WeatherRetriever;
-import main.java.component.SearchPanel;
-import main.java.component.DetailPanel;
+import component.MainPanel;
+
 import javax.swing.*;
 
 public class MainFrame extends JFrame {
-  private SearchPanel searchPanel;
-  private DetailPanel detailPanel;
+
+  private MainPanel mainPanel;
 
   public MainFrame() {
     super("Weather Forecast");
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    this.searchPanel = new SearchPanel();
-    getContentPane().add(this.searchPanel);
-    this.detailPanel = new DetailPanel();
-    getContentPane().add(this.detailPanel);
+    this.mainPanel = new MainPanel();
+    getContentPane().add(this.mainPanel);
 
     setSize(1024,647);
     setVisible(true);
     setLayout(null);
-
   }
 }

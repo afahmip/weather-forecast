@@ -34,7 +34,7 @@ public class SearchPanel extends JPanel {
   private String foundId;
 
   public SearchPanel() {
-    setBounds(0, 0, 235, 647);
+    setBounds(0, 0, 235, 768);
     setBackground(new Color(247,247,247));
     setLayout(null);
 

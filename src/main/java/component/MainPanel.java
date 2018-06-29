@@ -18,7 +18,7 @@ public class MainPanel extends JPanel {
   private MainController mainController;
 
   public MainPanel() {
-    setBounds(0, 0, 1024, 647);
+    setBounds(0, 0, 1024, 768);
     setLayout(null);
 
     this.searchPanel = new SearchPanel();
@@ -34,6 +34,7 @@ public class MainPanel extends JPanel {
     this.searchButton.setBounds(29,100,175,33);
     this.searchButton.setBackground(new Color(209, 209, 209));
     this.searchButton.setForeground(new Color(51, 51, 51));
+    this.searchButton.setFont(new Font("Varela Round", Font.PLAIN, 15));
     add(this.searchButton);
 
     this.searchButton.addActionListener(new ActionListener() {
@@ -48,6 +49,9 @@ public class MainPanel extends JPanel {
   }
 
   private void updateWeatherData(JSONObject data) {
+    remove(this.detailPanel);
+    this.detailPanel = new DetailPanel();
+    add(this.detailPanel);
     this.detailPanel.updateData(data);
   }
 

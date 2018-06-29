@@ -62,17 +62,17 @@ The source code is divided into two packages. One is package _component_ that st
     <td>main.java</td>
     <td>Main</td>
     <td>Can run component</td>
-    <td></td>
+    <td>v</td>
   </tr>
   <tr>
     <td rowspan="4">main.java.component</td>
     <td>MainFrame</td>
     <td>Create base component</td>
-    <td></td>
+    <td>v</td>
   </tr>
   <tr>
     <td>DetailPanel</td>
-    <td>Create base component</td>
+    <td>Showing daily weather data</td>
     <td></td>
   </tr>
   <tr>

@@ -40,10 +40,13 @@ src
             |   |   class MainFrame
             |   |   class DetailPanel
             |   |   class SearchPanel
+            |   |   class MainPanel
             |
-            └───model
-                |   class Weather
-
+            └───retriever
+                |   class CityFinder
+                |   class MainController
+                |   class WeatherRetriever
+            
 ```
 
 The source code is divided into two packages. One is package _component_ that stores interface component, and package _model_ that stores weather model. Package _component_ consists of class MainFrame (the main window), class DetailPanel (panel that show weather details), and class SearchPanel (panel that has search input and feature). Package _retriever_ consists of class WeatherRetriever that handles weather scrapping data from OpenWeatherMap API and class CityFinder which returns city ID from given city name.
@@ -73,12 +76,12 @@ The source code is divided into two packages. One is package _component_ that st
   <tr>
     <td>DetailPanel</td>
     <td>Showing daily weather data</td>
-    <td></td>
+    <td>v</td>
   </tr>
   <tr>
     <td>SearchPanel</td>
     <td>Can input city name</td>
-    <td>v</td>
+    <td></td>
   </tr>
   <tr>
     <td>MainPanel</td>
@@ -99,7 +102,7 @@ The source code is divided into two packages. One is package _component_ that st
   <tr>
     <td>MainController</td>
     <td>Interract between components and handle data interraction</td>
-    <td></td>
+    <td>v</td>
   </tr>
 </table>
 

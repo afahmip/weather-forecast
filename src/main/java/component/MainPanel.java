@@ -18,13 +18,13 @@ public class MainPanel extends JPanel {
   private MainController mainController;
 
   public MainPanel() {
-    setBounds(0, 0, 1024, 768);
+    setBounds(0, 0, 1024, 720);
     setLayout(null);
 
-    this.searchPanel = new SearchPanel();
-    add(this.searchPanel);
     this.detailPanel = new DetailPanel();
     add(this.detailPanel);
+    this.searchPanel = new SearchPanel();
+    add(this.searchPanel);
     initSearchButton();
     this.mainController = new MainController();
   }

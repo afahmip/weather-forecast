@@ -19,7 +19,7 @@ public class MainFrame extends JFrame {
     this.mainPanel = new MainPanel();
     getContentPane().add(this.mainPanel);
 
-    setSize(1024,768);
+    setSize(1024,720);
     setVisible(true);
     setLayout(null);
   }

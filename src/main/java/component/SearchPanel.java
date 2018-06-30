@@ -28,17 +28,14 @@ public class SearchPanel extends JPanel {
     }
   }
 
-  private JButton searchButton;
   private JTextField searchInput;
   private CityFinder cityFinder;
   private String foundId;
 
   public SearchPanel() {
-    setBounds(0, 0, 235, 768);
-    setBackground(new Color(247,247,247));
+    setBounds(0, 0, 235, 720);
+    setBackground(new Color(255,255,255));
     setLayout(null);
-
-    //setLayout (new BoxLayout (this, BoxLayout.Y_AXIS));
 
     this.cityFinder = new CityFinder();
     this.searchInput = new JTextField();

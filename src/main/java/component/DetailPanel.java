@@ -2,6 +2,7 @@ package main.java.component;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import retriever.DetailController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,8 +13,10 @@ import java.util.Date;
 public class DetailPanel extends JPanel {
 
   private Image wallpaper;
+  private DetailController detailController;
 
   public DetailPanel() {
+    this.detailController = new DetailController();
     setBounds(235, 0, 789, 720);
     setBackground(new Color(0, 133, 248));
     setLayout(null);
@@ -21,7 +24,7 @@ public class DetailPanel extends JPanel {
 
   public void updateData(JSONObject data) {
     JLabel cityLabel = new JLabel();
-    cityLabel.setText(getCityName(data));
+    cityLabel.setText(this.detailController.getCityName(data));
     cityLabel.setBounds(50,120, 300,40);
     cityLabel.setForeground(Color.white);
     cityLabel.setFont(new Font("Varela Round", Font.PLAIN, 30));
@@ -46,28 +49,30 @@ public class DetailPanel extends JPanel {
 
   private void showDailyDetails(JSONObject obj) {
     JLabel tempLabel = new JLabel();
-    tempLabel.setText(getDailyTemp(obj) + "°c");
+    tempLabel.setText(this.detailController.getDailyTemp(obj) + "°c");
     tempLabel.setBounds(50,50, 300,80);
     tempLabel.setForeground(Color.white);
     tempLabel.setFont(new Font("Varela Round", Font.PLAIN, 60));
     add(tempLabel);
 
     JLabel weatherLabel = new JLabel();
-    weatherLabel.setText(getDailyWeatherDetail(obj));
+    weatherLabel.setText(this.detailController.getDailyWeatherDetail(obj));
     weatherLabel.setBounds(50,155, 300,40);
     weatherLabel.setForeground(Color.white);
     weatherLabel.setFont(new Font("Varela Round", Font.PLAIN, 20));
     add(weatherLabel);
 
     JLabel timeLabel = new JLabel();
-    timeLabel.setText(getDailyDayFull(obj) + ", " + getDailyMonth(obj) + " " + getDailyDate(obj) + " " + getDailyYear(obj));
+    String text = this.detailController.getDailyDayFull(obj) + ", " + this.detailController.getDailyMonth(obj)
+            + " " + this.detailController.getDailyDate(obj) + " " + this.detailController.getDailyYear(obj);
+    timeLabel.setText(text);
     timeLabel.setBounds(50,380, 300,40);
     timeLabel.setForeground(Color.white);
     timeLabel.setFont(new Font("Varela Round", Font.PLAIN, 18));
     add(timeLabel);
 
     JLabel windLabel = new JLabel();
-    windLabel.setText(getDailyWind(obj) + " m/s");
+    windLabel.setText(this.detailController.getDailyWind(obj) + " m/s");
     windLabel.setBounds(50,220, 300,40);
     windLabel.setForeground(Color.white);
     windLabel.setFont(new Font("Varela Round", Font.PLAIN, 22));
@@ -81,7 +86,7 @@ public class DetailPanel extends JPanel {
     add(wind);
 
     JLabel humidLabel = new JLabel();
-    humidLabel.setText(getDailyHumidity(obj) + "%");
+    humidLabel.setText(this.detailController.getDailyHumidity(obj) + "%");
     humidLabel.setBounds(230,220, 300,40);
     humidLabel.setForeground(Color.white);
     humidLabel.setFont(new Font("Varela Round", Font.PLAIN, 22));
@@ -95,7 +100,7 @@ public class DetailPanel extends JPanel {
     add(humid);
 
     JLabel cloudLabel = new JLabel();
-    cloudLabel.setText(getDailyCloud(obj) + "%");
+    cloudLabel.setText(this.detailController.getDailyCloud(obj) + "%");
     cloudLabel.setBounds(50,285, 300,40);
     cloudLabel.setForeground(Color.white);
     cloudLabel.setFont(new Font("Varela Round", Font.PLAIN, 22));
@@ -109,7 +114,7 @@ public class DetailPanel extends JPanel {
     add(cloud);
 
     JLabel pressureLabel = new JLabel();
-    pressureLabel.setText(getDailyPressure(obj) + " hPa");
+    pressureLabel.setText(this.detailController.getDailyPressure(obj) + " hPa");
     pressureLabel.setBounds(230,285, 300,40);
     pressureLabel.setForeground(Color.white);
     pressureLabel.setFont(new Font("Varela Round", Font.PLAIN, 22));
@@ -127,14 +132,14 @@ public class DetailPanel extends JPanel {
     String date;
     int index = 0;
     JSONObject tmp = (JSONObject) list.get(0);
-    String tmpDate = getDateTime(tmp).split(" ")[0];
-    date = getDateTime(tmp).split(" ")[0];
+    String tmpDate = this.detailController.getDateTime(tmp).split(" ")[0];
+    date = this.detailController.getDateTime(tmp).split(" ")[0];
     createDailyPanel(tmp, 50+(index*135));
     index++;
 
     for(int i=1; i<list.size(); i++) {
       tmp = (JSONObject) list.get(i);
-      tmpDate = getDateTime(tmp).split(" ")[0];
+      tmpDate =this.detailController. getDateTime(tmp).split(" ")[0];
       if(!tmpDate.equals(date)) {
         date = tmpDate;
         createDailyPanel(tmp, 50+(index*135));
@@ -150,21 +155,21 @@ public class DetailPanel extends JPanel {
     panel.setLayout(null);
 
     JLabel dateLabel = new JLabel();
-    dateLabel.setText(getDailyDaySimplified(data) + " " + getDailyDate(data));
+    dateLabel.setText(this.detailController.getDailyDaySimplified(data) + " " + this.detailController.getDailyDate(data));
     dateLabel.setBounds(5,-12, 120,80);
     dateLabel.setForeground(Color.white);
     dateLabel.setFont(new Font("Varela Round", Font.PLAIN, 23));
     panel.add(dateLabel);
 
     JLabel tempLabel = new JLabel();
-    tempLabel.setText(getDailyTemp(data) + "°c");
+    tempLabel.setText(this.detailController.getDailyTemp(data) + "°c");
     tempLabel.setBounds(5,75, 120,80);
     tempLabel.setForeground(Color.white);
     tempLabel.setFont(new Font("Varela Round", Font.PLAIN, 27));
     panel.add(tempLabel);
 
     JLabel weatherLabel = new JLabel();
-    weatherLabel.setText(getDailyWeatherMain(data));
+    weatherLabel.setText(this.detailController.getDailyWeatherMain(data));
     weatherLabel.setBounds(5,103, 120,80);
     weatherLabel.setForeground(Color.white);
     weatherLabel.setFont(new Font("Varela Round", Font.PLAIN, 16));
@@ -173,133 +178,13 @@ public class DetailPanel extends JPanel {
     add(panel);
   }
 
-  private String getCityName(JSONObject data) {
-    JSONObject detail = (JSONObject) data.get("city");
-    return detail.get("name").toString();
-  }
-
-  private String getDailyWind(JSONObject data) {
-    JSONObject detail = (JSONObject) data.get("wind");
-    return detail.get("speed").toString();
-  }
-
-  private String getDailyCloud(JSONObject data) {
-    JSONObject detail = (JSONObject) data.get("clouds");
-    return detail.get("all").toString();
-  }
-
-  private String getDailyHumidity(JSONObject data) {
-    JSONObject detail = (JSONObject) data.get("main");
-    return detail.get("humidity").toString();
-  }
-
-  private String getDailyPressure(JSONObject data) {
-    JSONObject detail = (JSONObject) data.get("main");
-    return detail.get("pressure").toString();
-  }
-
-  private String getDailyTemp(JSONObject data) {
-    JSONObject detail = (JSONObject) data.get("main");
-    Double temp = ((Double) detail.get("temp")) - 273.15;
-    DecimalFormat df = new DecimalFormat("#.#");
-    return String.valueOf(df.format(temp));
-  }
-
-  private String getDailyWeatherMain(JSONObject data) {
-    JSONArray weather = (JSONArray) data.get("weather");
-    JSONObject detail = (JSONObject) weather.get(0);
-    return detail.get("main").toString();
-  }
-
-  private String getDailyWeatherDetail(JSONObject data) {
-    JSONArray weather = (JSONArray) data.get("weather");
-    JSONObject detail = (JSONObject) weather.get(0);
-    String input = detail.get("description").toString();
-    String output = input.substring(0, 1).toUpperCase() + input.substring(1);
-    return output;
-  }
-
-  private String getDailyDaySimplified(JSONObject data) {
-    String result = "";
-    String dateTime = data.get("dt_txt").toString();
-    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    try {
-      Date date = format.parse(dateTime);
-      SimpleDateFormat dateFormat = new SimpleDateFormat("E");
-      result = dateFormat.format(date);
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-    return result;
-  }
-
-  private String getDailyDayFull(JSONObject data) {
-    String result = "";
-    String dateTime = data.get("dt_txt").toString();
-    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    try {
-      Date date = format.parse(dateTime);
-      SimpleDateFormat dateFormat = new SimpleDateFormat("EEEE");
-      result = dateFormat.format(date);
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-    return result;
-  }
-
-  private String getDailyMonth(JSONObject data) {
-    String result = "";
-    String dateTime = data.get("dt_txt").toString();
-    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    try {
-      Date date = format.parse(dateTime);
-      SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM");
-      result = dateFormat.format(date);
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-    return result;
-  }
-
-  private String getDailyYear(JSONObject data) {
-    String result = "";
-    String dateTime = data.get("dt_txt").toString();
-    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    try {
-      Date date = format.parse(dateTime);
-      SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy");
-      result = dateFormat.format(date);
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-    return result;
-  }
-
-  private String getDailyDate(JSONObject data) {
-    String result = "";
-    String dateTime = data.get("dt_txt").toString();
-    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    try {
-      Date date = format.parse(dateTime);
-      SimpleDateFormat dateFormat = new SimpleDateFormat("d");
-      result = dateFormat.format(date);
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-    return result;
-  }
-
-  private String getDateTime(JSONObject data) {
-    return data.get("dt_txt").toString();
-  }
-
   private JSONArray getDailyList(JSONObject data) {
     JSONArray list = (JSONArray) data.get("list");
     JSONArray result = new JSONArray();
 
     for(Object obj : list) {
       JSONObject dailyData = new JSONObject();
-      dailyData.put("temp", getDailyTemp((JSONObject) obj));
+      dailyData.put("temp", this.detailController.getDailyTemp((JSONObject) obj));
     }
 
     return result;

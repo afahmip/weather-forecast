@@ -55,55 +55,62 @@ The source code is divided into two packages. One is package _component_ that st
 **_subject to change_**
 
 <table>
-  <tr>
-    <th>Package</th>
-    <th>Class</th>
-    <th>Explanation</th>
-    <th>Check</th>
-  </tr>
-  <tr>
-    <td>main.java</td>
-    <td>Main</td>
-    <td>Can run component</td>
-    <td>v</td>
-  </tr>
-  <tr>
-    <td rowspan="4">main.java.component</td>
-    <td>MainFrame</td>
-    <td>Create base component</td>
-    <td>v</td>
-  </tr>
-  <tr>
-    <td>DetailPanel</td>
-    <td>Showing daily weather data</td>
-    <td>v</td>
-  </tr>
-  <tr>
-    <td>SearchPanel</td>
-    <td>Can input city name</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>MainPanel</td>
-    <td>Interract between SearchPanel and DetailPanel</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td rowspan="3">main.java.retriever</td>
-    <td>WeatherRetriever</td>
-    <td>Retrieve weather data and save to json file</td>
-    <td>v</td>
-  </tr>
-  <tr>
-    <td>CityFinder</td>
-    <td>Can find city ID based on name</td>
-    <td>v</td>
-  </tr>
-  <tr>
-    <td>MainController</td>
-    <td>Interract between components and handle data interraction</td>
-    <td>v</td>
-  </tr>
+<tbody>
+<tr>
+<th>Package</th>
+<th>Class</th>
+<th>Explanation</th>
+<th>Check</th>
+</tr>
+<tr>
+<td>main.java</td>
+<td>Main</td>
+<td>Can run component</td>
+<td>v</td>
+</tr>
+<tr>
+<td rowspan="4">main.java.component</td>
+<td>MainFrame</td>
+<td>Create base component</td>
+<td>v</td>
+</tr>
+<tr>
+<td>DetailPanel</td>
+<td>Showing daily weather data</td>
+<td>v</td>
+</tr>
+<tr>
+<td>SearchPanel</td>
+<td>Can input city name</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>MainPanel</td>
+<td>Interract between SearchPanel and DetailPanel</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td rowspan="4">main.java.retriever</td>
+<td>WeatherRetriever</td>
+<td>Retrieve weather data and save to json file</td>
+<td>v</td>
+</tr>
+<tr>
+<td>CityFinder</td>
+<td>Can find city ID based on name</td>
+<td>v</td>
+</tr>
+<tr>
+<td>MainController</td>
+<td>Interract between components and handle data interraction</td>
+<td>v</td>
+</tr>
+<tr>
+<td>DetailController</td>
+<td>Handling weather detail data and interract with DetailPanel</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
 </table>
 
 ## How to Install  

@@ -46,6 +46,7 @@ src
                 |   class CityFinder
                 |   class MainController
                 |   class WeatherRetriever
+                |   class DetailController
             
 ```
 
@@ -81,7 +82,7 @@ The source code is divided into two packages. One is package _component_ that st
 </tr>
 <tr>
 <td>SearchPanel</td>
-<td>Can input city name</td>
+<td>Can input city name and show multiple city results with similar name</td>
 <td>&nbsp;</td>
 </tr>
 <tr>

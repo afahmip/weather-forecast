@@ -1,14 +1,10 @@
-package main.java.component;
+package component;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import retriever.DetailController;
-
 import javax.swing.*;
 import java.awt.*;
-import java.text.DecimalFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class DetailPanel extends JPanel {
 
@@ -18,7 +14,7 @@ public class DetailPanel extends JPanel {
   public DetailPanel() {
     this.detailController = new DetailController();
     setBounds(235, 0, 789, 720);
-    setBackground(new Color(0, 133, 248));
+    setBackground(new Color(216, 216, 216));
     setLayout(null);
   }
 

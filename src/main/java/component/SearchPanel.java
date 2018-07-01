@@ -1,8 +1,10 @@
-package main.java.component;
+package component;
 
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import main.java.retriever.CityFinder;
 import org.json.simple.JSONObject;
@@ -30,11 +32,14 @@ public class SearchPanel extends JPanel {
 
   private JTextField searchInput;
   private CityFinder cityFinder;
+  private JPanel errorPanel;
+  private JScrollPane scrollResultPanel;
   private String foundId;
+  private ArrayList<JSONObject> cityResult;
 
   public SearchPanel() {
     setBounds(0, 0, 235, 720);
-    setBackground(new Color(255,255,255));
+    setBackground(new Color(232,236,242));
     setLayout(null);
 
     this.cityFinder = new CityFinder();
@@ -45,33 +50,56 @@ public class SearchPanel extends JPanel {
 
   public void findCity() {
     String cityName = this.searchInput.getText();
-    ArrayList<JSONObject> cityResult = this.cityFinder.findCityId(cityName);
+    this.cityResult = this.cityFinder.findCityId(cityName);
     this.foundId = "";
 
-    if (cityResult.size() == 1) {
-      this.foundId = cityResult.get(0).get("id").toString();
-    } else if (cityResult.size() == 0) {
-      notFound();
+    if(this.isAncestorOf(this.scrollResultPanel)) remove(this.scrollResultPanel);
+    if(this.isAncestorOf(this.errorPanel)) remove(this.errorPanel);
+
+    if (this.cityResult.size() == 1) {
+      this.foundId = this.cityResult.get(0).get("id").toString();
       repaint();
-    } else if (cityResult.size() > 1) {
-      System.out.println("banyak");
+    } else if (this.cityResult.size() == 0) {
+      showErrorPanel();
+      repaint();
+    } else if (this.cityResult.size() > 1) {
+      this.foundId = "MANY";
     }
+  }
+
+  public void setScrollResultPanel(JScrollPane pane) {
+    this.scrollResultPanel = pane;
+    add(this.scrollResultPanel);
+  }
+
+  public ArrayList<JSONObject> getCityResult() {
+    return this.cityResult;
   }
 
   public String getFoundId() { return this.foundId; }
 
-  private void notFound() {
+  public void setFoundId(String foundId) { this.foundId = foundId; }
+
+  private void showErrorPanel() {
+    this.errorPanel = new JPanel();
+    this.errorPanel.setBounds(30,150, 175, 140);
+    this.errorPanel.setBackground(new Color(255, 255, 255, 0));
+
     JLabel error404 = new JLabel("404");
-    error404.setBounds(72,150, 150,70);
+    error404.setBounds(0,10, 150,70);
     error404.setForeground(new Color(112, 112, 112));
-    error404.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 50));
-    add(error404);
+    error404.setFont(new Font("Varela Round", Font.PLAIN, 50));
+    this.errorPanel.add(error404);
 
     JLabel notfound = new JLabel("City not found!");
-    notfound.setBounds(57,200, 150,70);
+    notfound.setBounds(0,80, 150,70);
     notfound.setForeground(new Color(112, 112, 112));
-    notfound.setFont(new Font("Segoe UI", Font.PLAIN, 18));
-    add(notfound);
+    notfound.setFont(new Font("Varela Round", Font.PLAIN, 18));
+    this.errorPanel.add(notfound);
+
+    add(this.errorPanel);
+    revalidate();
+    repaint();
   }
 
 }

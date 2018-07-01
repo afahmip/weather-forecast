@@ -43,7 +43,7 @@ public class WeatherRetriever {
       in.close();
 
       // Print to file
-      PrintWriter pw = new PrintWriter("src/resource/result.json");
+      PrintWriter pw = new PrintWriter("src/resource/json/result.json");
       pw.write(response.toString());
       pw.flush();
       pw.close();

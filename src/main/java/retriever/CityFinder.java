@@ -21,7 +21,7 @@ public class CityFinder {
     System.out.println("Loading file...");
 
     try {
-      Object obj = this.parser.parse(new FileReader("./src/resource/city.list.json"));
+      Object obj = this.parser.parse(new FileReader("./src/resource/json/city.list.json"));
       this.citylist = (JSONArray) obj;
       System.out.println(this.citylist.size());
     } catch (FileNotFoundException e) {
@@ -41,14 +41,13 @@ public class CityFinder {
       JSONObject tmp = (JSONObject) obj;
       String tmpName = tmp.get("name").toString();
       if(fuzzy.ratio(tmpName.toLowerCase(), name.toLowerCase()) >= 90) {
-        // DEBUG
-        // System.out.println(tmpName + " " + tmp.get("id").toString() + " " + fuzzy.ratio(tmpName.toLowerCase(), name.toLowerCase()));
-        JSONObject result = new JSONObject();
-        result.put("id", tmp.get("id").toString());
-        result.put("name", tmpName);
+        JSONObject result = tmp;
+//        result.put("id", tmp.get("id").toString());
+//        result.put("name", tmpName);
         cityResult.add(result);
       }
     }
+    System.out.println("length " + cityResult.size());
     return cityResult;
   }
 

@@ -50,7 +50,7 @@ src
             
 ```
 
-The source code is divided into two packages. One is package _component_ that stores interface component, and package _model_ that stores weather model. Package _component_ consists of class MainFrame (the main window), class DetailPanel (panel that show weather details), and class SearchPanel (panel that has search input and feature). Package _retriever_ consists of class WeatherRetriever that handles weather scrapping data from OpenWeatherMap API and class CityFinder which returns city ID from given city name.
+The source code is divided into two packages. One is package _component_ that stores interface component, and package _model_ that stores weather model. Package _component_ consists of class **MainFrame** (the main window), class **MainPanel** (panel that holds DetailPanel and SearchPanel as well as other interacting buttons), class **DetailPanel** (panel that show weather details), and class **SearchPanel** (panel that has search input and feature). Package _retriever_ consists of class **WeatherRetriever** that handles weather scrapping data from OpenWeatherMap API, class **DetailController** which preprocess raw JSON data and returns any attributes that are needed, class **MainController** which handles data interraction between components, and class **CityFinder** which returns city ID from given city name.
 
 ## Class / Feature Checklist
 **_subject to change_**
@@ -72,7 +72,7 @@ The source code is divided into two packages. One is package _component_ that st
 <tr>
 <td rowspan="4">main.java.component</td>
 <td>MainFrame</td>
-<td>Create base component</td>
+<td>Base frame that holds all panels</td>
 <td>v</td>
 </tr>
 <tr>
@@ -83,12 +83,12 @@ The source code is divided into two packages. One is package _component_ that st
 <tr>
 <td>SearchPanel</td>
 <td>Can input city name and show multiple city results with similar name</td>
-<td>&nbsp;</td>
+<td></td>
 </tr>
 <tr>
 <td>MainPanel</td>
 <td>Interract between SearchPanel and DetailPanel</td>
-<td>&nbsp;</td>
+<td>v</td>
 </tr>
 <tr>
 <td rowspan="4">main.java.retriever</td>
@@ -109,7 +109,7 @@ The source code is divided into two packages. One is package _component_ that st
 <tr>
 <td>DetailController</td>
 <td>Handling weather detail data and interract with DetailPanel</td>
-<td>&nbsp;</td>
+<td>v</td>
 </tr>
 </tbody>
 </table>

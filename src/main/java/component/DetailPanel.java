@@ -5,17 +5,22 @@ import org.json.simple.JSONObject;
 import retriever.DetailController;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class DetailPanel extends JPanel {
 
   private Image wallpaper;
   private DetailController detailController;
+  private JPanel dailyDetailPanel;
+  private JPanel welcomePanel;
 
   public DetailPanel() {
     this.detailController = new DetailController();
     setBounds(235, 0, 789, 720);
     setBackground(new Color(216, 216, 216));
     setLayout(null);
+    showWelcomePanel();
   }
 
   public void updateData(JSONObject data) {
@@ -26,13 +31,13 @@ public class DetailPanel extends JPanel {
     cityLabel.setFont(new Font("Varela Round", Font.PLAIN, 30));
     add(cityLabel);
 
+    if(this.isAncestorOf(this.welcomePanel)) remove(this.welcomePanel);
     JSONArray list = (JSONArray) data.get("list");
     JSONObject obj = (JSONObject) list.get(0);
     showDailyDetails(obj);
     generateDailyPanels(list);
 
     this.wallpaper = new ImageIcon("./src/resource/images/night.jpg").getImage();
-
     revalidate();
     repaint();
   }
@@ -43,108 +48,156 @@ public class DetailPanel extends JPanel {
     g.drawImage(wallpaper, 0, 0, null);
   }
 
+  public void showWelcomePanel() {
+    if(this.isAncestorOf(this.dailyDetailPanel)) remove(this.dailyDetailPanel);
+
+    this.welcomePanel = new JPanel();
+    this.welcomePanel.setBounds(0, 0, 789, 720);
+    this.welcomePanel.setBackground(new Color(255, 255, 255));
+    this.welcomePanel.setLayout(null);
+
+    JLabel welcome = new JLabel();
+    welcome.setText("Welcome to");
+    welcome.setBounds(308, 240, 300, 30);
+    welcome.setForeground(new Color(140, 140, 140));
+    welcome.setFont(new Font("Varela Round", Font.PLAIN, 25));
+    this.welcomePanel.add(welcome);
+
+    JLabel weather = new JLabel();
+    weather.setText("WEATHER");
+    weather.setBounds(275, 290, 300, 30);
+    weather.setForeground(new Color(140, 140, 140));
+    weather.setFont(new Font("Varela Round", Font.PLAIN, 40));
+    this.welcomePanel.add(weather);
+
+    JLabel forecast = new JLabel();
+    forecast.setText("FORECAST");
+    forecast.setBounds(272, 335, 300, 30);
+    forecast.setForeground(new Color(140, 140, 140));
+    forecast.setFont(new Font("Varela Round", Font.PLAIN, 40));
+    this.welcomePanel.add(forecast);
+
+    add(this.welcomePanel);
+
+    revalidate();
+    repaint();
+  }
+
   private void showDailyDetails(JSONObject obj) {
+    if(this.isAncestorOf(this.dailyDetailPanel)) remove(this.dailyDetailPanel);
+    this.dailyDetailPanel = new JPanel();
+    this.dailyDetailPanel.setBounds(50, 0, 789, 720);
+    this.dailyDetailPanel.setBackground(new Color(216, 216, 216, 0));
+    this.dailyDetailPanel.setLayout(null);
+
     JLabel tempLabel = new JLabel();
     tempLabel.setText(this.detailController.getDailyTemp(obj) + "°c");
-    tempLabel.setBounds(50,50, 300,80);
+    tempLabel.setBounds(0,50, 300,80);
     tempLabel.setForeground(Color.white);
     tempLabel.setFont(new Font("Varela Round", Font.PLAIN, 60));
-    add(tempLabel);
+    this.dailyDetailPanel.add(tempLabel);
 
     JLabel weatherLabel = new JLabel();
     weatherLabel.setText(this.detailController.getDailyWeatherDetail(obj));
-    weatherLabel.setBounds(50,155, 300,40);
+    weatherLabel.setBounds(0,155, 300,40);
     weatherLabel.setForeground(Color.white);
     weatherLabel.setFont(new Font("Varela Round", Font.PLAIN, 20));
-    add(weatherLabel);
+    this.dailyDetailPanel.add(weatherLabel);
 
     JLabel timeLabel = new JLabel();
     String text = this.detailController.getDailyDayFull(obj) + ", " + this.detailController.getDailyMonth(obj)
             + " " + this.detailController.getDailyDate(obj) + " " + this.detailController.getDailyYear(obj);
     timeLabel.setText(text);
-    timeLabel.setBounds(50,380, 300,40);
+    timeLabel.setBounds(0,380, 300,40);
     timeLabel.setForeground(Color.white);
     timeLabel.setFont(new Font("Varela Round", Font.PLAIN, 18));
-    add(timeLabel);
+    this.dailyDetailPanel.add(timeLabel);
 
     JLabel windLabel = new JLabel();
     windLabel.setText(this.detailController.getDailyWind(obj) + " m/s");
-    windLabel.setBounds(50,220, 300,40);
+    windLabel.setBounds(0,220, 300,40);
     windLabel.setForeground(Color.white);
     windLabel.setFont(new Font("Varela Round", Font.PLAIN, 22));
-    add(windLabel);
+    this.dailyDetailPanel.add(windLabel);
 
     JLabel wind = new JLabel();
     wind.setText("Wind speed");
-    wind.setBounds(50,245, 300,40);
+    wind.setBounds(0,245, 300,40);
     wind.setForeground(Color.white);
     wind.setFont(new Font("Varela Round", Font.PLAIN, 13));
-    add(wind);
+    this.dailyDetailPanel.add(wind);
 
     JLabel humidLabel = new JLabel();
     humidLabel.setText(this.detailController.getDailyHumidity(obj) + "%");
-    humidLabel.setBounds(230,220, 300,40);
+    humidLabel.setBounds(180,220, 300,40);
     humidLabel.setForeground(Color.white);
     humidLabel.setFont(new Font("Varela Round", Font.PLAIN, 22));
-    add(humidLabel);
+    this.dailyDetailPanel.add(humidLabel);
 
     JLabel humid = new JLabel();
     humid.setText("Humidity");
-    humid.setBounds(230,245, 300,40);
+    humid.setBounds(180,245, 300,40);
     humid.setForeground(Color.white);
     humid.setFont(new Font("Varela Round", Font.PLAIN, 13));
-    add(humid);
+    this.dailyDetailPanel.add(humid);
 
     JLabel cloudLabel = new JLabel();
     cloudLabel.setText(this.detailController.getDailyCloud(obj) + "%");
-    cloudLabel.setBounds(50,285, 300,40);
+    cloudLabel.setBounds(0,285, 300,40);
     cloudLabel.setForeground(Color.white);
     cloudLabel.setFont(new Font("Varela Round", Font.PLAIN, 22));
-    add(cloudLabel);
+    this.dailyDetailPanel.add(cloudLabel);
 
     JLabel cloud = new JLabel();
     cloud.setText("Cloudiness");
-    cloud.setBounds(50,310, 300,40);
+    cloud.setBounds(0,310, 300,40);
     cloud.setForeground(Color.white);
     cloud.setFont(new Font("Varela Round", Font.PLAIN, 13));
-    add(cloud);
+    this.dailyDetailPanel.add(cloud);
 
     JLabel pressureLabel = new JLabel();
     pressureLabel.setText(this.detailController.getDailyPressure(obj) + " hPa");
-    pressureLabel.setBounds(230,285, 300,40);
+    pressureLabel.setBounds(180,285, 300,40);
     pressureLabel.setForeground(Color.white);
     pressureLabel.setFont(new Font("Varela Round", Font.PLAIN, 22));
-    add(pressureLabel);
+    this.dailyDetailPanel.add(pressureLabel);
 
     JLabel pressure = new JLabel();
     pressure.setText("Pressure");
-    pressure.setBounds(230,310, 300,40);
+    pressure.setBounds(180,310, 300,40);
     pressure.setForeground(Color.white);
     pressure.setFont(new Font("Varela Round", Font.PLAIN, 13));
-    add(pressure);
+    this.dailyDetailPanel.add(pressure);
+
+    add(this.dailyDetailPanel);
+
+    revalidate();
+    repaint();
   }
 
   private void generateDailyPanels(JSONArray list) {
     String date;
     int index = 0;
     JSONObject tmp = (JSONObject) list.get(0);
-    String tmpDate = this.detailController.getDateTime(tmp).split(" ")[0];
     date = this.detailController.getDateTime(tmp).split(" ")[0];
-    createDailyPanel(tmp, 50+(index*135));
+    createDailyPanel(tmp, 50+(index*135), index);
+    this.detailController.pushIndex(tmp);
     index++;
 
     for(int i=1; i<list.size(); i++) {
       tmp = (JSONObject) list.get(i);
-      tmpDate =this.detailController. getDateTime(tmp).split(" ")[0];
+      String tmpDate =this.detailController. getDateTime(tmp).split(" ")[0];
       if(!tmpDate.equals(date)) {
         date = tmpDate;
-        createDailyPanel(tmp, 50+(index*135));
+        createDailyPanel(tmp, 50+(index*135), index);
+        this.detailController.pushIndex(tmp);
         index++;
+        if(index == 5) break;
       }
     }
   }
 
-  private void createDailyPanel(JSONObject data, int x) {
+  private void createDailyPanel(JSONObject data, int x, int idx) {
     JPanel panel = new JPanel();
     panel.setBounds(x, 430, 120, 168);
     panel.setBackground(new Color(255, 255, 255, 80));
@@ -171,19 +224,15 @@ public class DetailPanel extends JPanel {
     weatherLabel.setFont(new Font("Varela Round", Font.PLAIN, 16));
     panel.add(weatherLabel);
 
+    panel.addMouseListener(new MouseAdapter() {
+      @Override
+      public void mouseClicked(MouseEvent e) {
+        JSONObject obj = detailController.getData(idx);
+        showDailyDetails(obj);
+      }
+    });
+
     add(panel);
-  }
-
-  private JSONArray getDailyList(JSONObject data) {
-    JSONArray list = (JSONArray) data.get("list");
-    JSONArray result = new JSONArray();
-
-    for(Object obj : list) {
-      JSONObject dailyData = new JSONObject();
-      dailyData.put("temp", this.detailController.getDailyTemp((JSONObject) obj));
-    }
-
-    return result;
   }
 
 }

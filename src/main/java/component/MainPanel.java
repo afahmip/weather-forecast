@@ -1,7 +1,5 @@
 package component;
 
-import main.java.component.SearchPanel;
-import main.java.component.DetailPanel;
 import org.json.simple.JSONObject;
 import retriever.MainController;
 
@@ -50,6 +48,8 @@ public class MainPanel extends JPanel {
         } else if(foundId.length() > 0) {
           mainController.getWeatherData(foundId);
           updateWeatherData(mainController.parseWeatherData());
+        } else if(foundId.equals("")) {
+          detailPanel.showWelcomePanel();
         }
       }
     });
@@ -67,7 +67,7 @@ public class MainPanel extends JPanel {
     }
 
     JScrollPane scrollResultPanel = new JScrollPane(searchResultPanel);
-    scrollResultPanel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+    scrollResultPanel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
     scrollResultPanel.setBounds(10, 165, 215, 450);
     this.searchPanel.setScrollResultPanel(scrollResultPanel);
     revalidate();

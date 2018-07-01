@@ -5,9 +5,24 @@ import org.json.simple.JSONObject;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class DetailController {
+
+  private ArrayList<JSONObject> dataList;
+
+  public DetailController() {
+    this.dataList = new ArrayList<>();
+  }
+
+  public void pushIndex(JSONObject obj) {
+    this.dataList.add(obj);
+  }
+
+  public JSONObject getData(int idx) {
+    return this.dataList.get(idx);
+  }
 
   public String getCityName(JSONObject data) {
     JSONObject detail = (JSONObject) data.get("city");
@@ -36,7 +51,7 @@ public class DetailController {
 
   public String getDailyTemp(JSONObject data) {
     JSONObject detail = (JSONObject) data.get("main");
-    Double temp = ((Double) detail.get("temp")) - 273.15;
+    Double temp = (((Number)detail.get("temp")).doubleValue()) - 273.15;
     DecimalFormat df = new DecimalFormat("#.#");
     return String.valueOf(df.format(temp));
   }

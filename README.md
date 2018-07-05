@@ -83,7 +83,7 @@ The source code is divided into two packages. One is package _component_ that st
 <tr>
 <td>SearchPanel</td>
 <td>Can input city name and show multiple city results with similar name</td>
-<td></td>
+<td>v</td>
 </tr>
 <tr>
 <td>MainPanel</td>

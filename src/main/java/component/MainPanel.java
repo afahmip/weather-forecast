@@ -57,7 +57,8 @@ public class MainPanel extends JPanel {
 
   private void showResultPanels(ArrayList<JSONObject> list) {
     JPanel searchResultPanel = new JPanel();
-    searchResultPanel.setBounds(10, 165, 215, list.size()*100);
+    searchResultPanel.setBounds(10, 165, 215, list.size()*80);
+    searchResultPanel.setPreferredSize(new Dimension(215, list.size()*78));
     searchResultPanel.setBackground(new Color(255, 255, 255, 0));
     searchResultPanel.setLayout(null);
 
@@ -66,10 +67,12 @@ public class MainPanel extends JPanel {
       searchResultPanel.add(panel);
     }
 
-    JScrollPane scrollResultPanel = new JScrollPane(searchResultPanel);
-    scrollResultPanel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-    scrollResultPanel.setBounds(10, 165, 215, 450);
-    this.searchPanel.setScrollResultPanel(scrollResultPanel);
+    JScrollPane scrollPane = new JScrollPane(searchResultPanel);
+    scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+    scrollPane.setPreferredSize(new Dimension(215, 100));
+    scrollPane.setBounds(10, 165, 215, 400);
+    this.searchPanel.setScrollResultPanel(scrollPane);
+
     revalidate();
     repaint();
   }

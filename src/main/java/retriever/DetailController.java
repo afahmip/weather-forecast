@@ -34,6 +34,11 @@ public class DetailController {
     return detail.get("speed").toString();
   }
 
+  public String getDailyWindDirection(JSONObject data) {
+    JSONObject detail = (JSONObject) data.get("wind");
+    return detail.get("deg").toString();
+  }
+
   public String getDailyCloud(JSONObject data) {
     JSONObject detail = (JSONObject) data.get("clouds");
     return detail.get("all").toString();

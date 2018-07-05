@@ -141,6 +141,20 @@ public class DetailPanel extends JPanel {
     humid.setFont(new Font("Varela Round", Font.PLAIN, 13));
     this.dailyDetailPanel.add(humid);
 
+    JLabel windSpeedLabel = new JLabel();
+    windSpeedLabel.setText(this.detailController.getDailyWindDirection(obj) + "°");
+    windSpeedLabel.setBounds(360,220, 300,40);
+    windSpeedLabel.setForeground(Color.white);
+    windSpeedLabel.setFont(new Font("Varela Round", Font.PLAIN, 22));
+    this.dailyDetailPanel.add(windSpeedLabel);
+
+    JLabel windDir = new JLabel();
+    windDir.setText("Wind direction");
+    windDir.setBounds(360,245, 300,40);
+    windDir.setForeground(Color.white);
+    windDir.setFont(new Font("Varela Round", Font.PLAIN, 13));
+    this.dailyDetailPanel.add(windDir);
+
     JLabel cloudLabel = new JLabel();
     cloudLabel.setText(this.detailController.getDailyCloud(obj) + "%");
     cloudLabel.setBounds(0,285, 300,40);

@@ -1,6 +1,6 @@
 package main.java.component;
 
-import component.MainPanel;
+import main.java.component.MainPanel;
 
 import javax.swing.*;
 import java.awt.*;

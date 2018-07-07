@@ -12,14 +12,16 @@ public class WeatherRetriever {
   private String cityId;
   private String getUrl;
 
-  public WeatherRetriever() {
-
-  }
+  public WeatherRetriever() {}
 
   public void initId(String cityId) {
     this.cityId = cityId;
     this.getUrl = BASE_URL + this.cityId + "&appid=" + APP_ID;
   }
+
+  public String getCityId() { return this.cityId; }
+
+  public String getGetUrl() { return this.getUrl; }
 
   public void sendGET() throws IOException {
     // DEBUG

@@ -1,8 +1,8 @@
-package component;
+package main.java.component;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import retriever.DetailController;
+import main.java.retriever.DetailController;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -114,7 +114,7 @@ public class DetailPanel extends JPanel {
     this.dailyDetailPanel.add(timeLabel);
 
     JLabel windLabel = new JLabel();
-    windLabel.setText(this.detailController.getDailyWind(obj) + " m/s");
+    windLabel.setText(this.detailController.getDailyWindSpeed(obj) + " m/s");
     windLabel.setBounds(0,220, 300,40);
     windLabel.setForeground(Color.white);
     windLabel.setFont(new Font("Varela Round", Font.PLAIN, 22));

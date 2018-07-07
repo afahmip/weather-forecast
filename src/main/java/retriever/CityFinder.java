@@ -42,8 +42,7 @@ public class CityFinder {
       String tmpName = tmp.get("name").toString();
       if(fuzzy.ratio(tmpName.toLowerCase(), name.toLowerCase()) >= 90) {
         JSONObject result = tmp;
-//        result.put("id", tmp.get("id").toString());
-//        result.put("name", tmpName);
+        System.out.println(result.get("id").toString());
         cityResult.add(result);
       }
     }

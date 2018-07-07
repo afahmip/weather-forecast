@@ -1,4 +1,4 @@
-package retriever;
+package main.java.retriever;
 
 import main.java.retriever.WeatherRetriever;
 import org.json.simple.JSONObject;

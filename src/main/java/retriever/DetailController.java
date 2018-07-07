@@ -1,4 +1,4 @@
-package retriever;
+package main.java.retriever;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -29,7 +29,7 @@ public class DetailController {
     return detail.get("name").toString();
   }
 
-  public String getDailyWind(JSONObject data) {
+  public String getDailyWindSpeed(JSONObject data) {
     JSONObject detail = (JSONObject) data.get("wind");
     return detail.get("speed").toString();
   }

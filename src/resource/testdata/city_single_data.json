@@ -1,0 +1,32 @@
+{
+  "dt": 1530813600,
+  "main": {
+    "temp": 299.39,
+    "temp_min": 299.39,
+    "temp_max": 299.568,
+    "pressure": 1023.2,
+    "sea_level": 1023.74,
+    "grnd_level": 1023.2,
+    "humidity": 94,
+    "temp_kf": -0.18
+  },
+  "weather": [
+    {
+      "id": 800,
+      "main": "Clear",
+      "description": "clear sky",
+      "icon": "01n"
+    }
+  ],
+  "clouds": {
+    "all": 0
+  },
+  "wind": {
+    "speed": 2.96,
+    "deg": 114.003
+  },
+  "sys": {
+    "pod": "n"
+  },
+  "dt_txt": "2018-07-05 18:00:00"
+}

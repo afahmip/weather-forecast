@@ -1,0 +1,1 @@
+{"dt":1530867600,"main":{"temp":305.2,"temp_min":302.738,"temp_max":305.2,"pressure":1020.11,"sea_level":1020.6,"grnd_level":1020.11,"humidity":77,"temp_kf":2.46},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"clouds":{"all":0},"wind":{"speed":3.37,"deg":23.5089},"sys":{"pod":"d"},"dt_txt":"2018-07-06 09:00:00"}

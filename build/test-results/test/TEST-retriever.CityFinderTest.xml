@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="retriever.CityFinderTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-07-07T03:33:02" hostname="fahmi-pc" time="1.476">
+  <properties/>
+  <testcase name="testFindCityId" classname="retriever.CityFinderTest" time="1.476"/>
+  <system-out><![CDATA[Loading file...
+209579
+1650357
+1619650
+7035024
+7038902
+8045366
+length 5
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

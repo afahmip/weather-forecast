@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="retriever.MainControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-07-07T03:33:04" hostname="fahmi-pc" time="0.219">
+  <properties/>
+  <testcase name="testParseWeatherData" classname="retriever.MainControllerTest" time="0.219"/>
+  <system-out><![CDATA[http://api.openweathermap.org/data/2.5/forecast?id=1642911&appid=927ac7c564019420f279e4e7a156fa32
+GET Response Code = 200
+Parse data...
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

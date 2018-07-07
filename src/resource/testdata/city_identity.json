@@ -1,0 +1,11 @@
+{
+  "city": {
+    "id": 1642911,
+    "name": "Jakarta",
+    "coord": {
+      "lat": -6.2147,
+      "lon": 106.8451
+    },
+    "country": "ID"
+  }
+}

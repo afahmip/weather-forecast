@@ -1,7 +1,7 @@
-package component;
+package main.java.component;
 
 import org.json.simple.JSONObject;
-import retriever.MainController;
+import main.java.retriever.MainController;
 
 import javax.swing.*;
 import java.awt.*;

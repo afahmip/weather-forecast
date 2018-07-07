@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1650357,
+    "name": "Bandung",
+    "country": "ID",
+    "coord": {
+      "lon": 107.618607,
+      "lat": -6.90389
+    }
+  },
+  {
+    "id": 1619650,
+    "name": "Ban Dung",
+    "country": "TH",
+    "coord": {
+      "lon": 103.259567,
+      "lat": 17.698999
+    }
+  },
+  {
+    "id": 7035024,
+    "name": "Bandung",
+    "country": "ID",
+    "coord": {
+      "lon": 112.4618,
+      "lat": -8.1586
+    }
+  },
+  {
+    "id": 7038902,
+    "name": "Badung",
+    "country": "ID",
+    "coord": {
+      "lon": 115.243698,
+      "lat": -8.4355
+    }
+  },
+  {
+    "id": 8045366,
+    "name": "Bandung",
+    "country": "ID",
+    "coord": {
+      "lon": 108.260696,
+      "lat": -7.3993
+    }
+  }
+]

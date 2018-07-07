@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+<JDepend>
+    <Packages>
+
+        <Package name="java.awt">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="java.awt.event">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="java.io">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="java.lang">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="java.net">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="java.text">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="java.util">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="javax.swing">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="main.java">
+            <Stats>
+                <TotalClasses>1</TotalClasses>
+                <ConcreteClasses>1</ConcreteClasses>
+                <AbstractClasses>0</AbstractClasses>
+                <Ca>0</Ca>
+                <Ce>2</Ce>
+                <A>0</A>
+                <I>1</I>
+                <D>0</D>
+                <V>1</V>
+            </Stats>
+
+            <AbstractClasses>
+            </AbstractClasses>
+
+            <ConcreteClasses>
+                <Class sourceFile="Main.java">
+                    main.java.Main
+                </Class>
+            </ConcreteClasses>
+
+            <DependsUpon>
+                <Package>java.lang</Package>
+                <Package>main.java.component</Package>
+            </DependsUpon>
+
+            <UsedBy>
+            </UsedBy>
+        </Package>
+
+        <Package name="main.java.component">
+            <Stats>
+                <TotalClasses>7</TotalClasses>
+                <ConcreteClasses>7</ConcreteClasses>
+                <AbstractClasses>0</AbstractClasses>
+                <Ca>1</Ca>
+                <Ce>8</Ce>
+                <A>0</A>
+                <I>0.89</I>
+                <D>0.11</D>
+                <V>1</V>
+            </Stats>
+
+            <AbstractClasses>
+            </AbstractClasses>
+
+            <ConcreteClasses>
+                <Class sourceFile="DetailPanel.java">
+                    main.java.component.DetailPanel
+                </Class>
+                <Class sourceFile="DetailPanel.java">
+                    main.java.component.DetailPanel$1
+                </Class>
+                <Class sourceFile="MainFrame.java">
+                    main.java.component.MainFrame
+                </Class>
+                <Class sourceFile="MainPanel.java">
+                    main.java.component.MainPanel
+                </Class>
+                <Class sourceFile="MainPanel.java">
+                    main.java.component.MainPanel$1
+                </Class>
+                <Class sourceFile="MainPanel.java">
+                    main.java.component.MainPanel$2
+                </Class>
+                <Class sourceFile="SearchPanel.java">
+                    main.java.component.SearchPanel
+                </Class>
+            </ConcreteClasses>
+
+            <DependsUpon>
+                <Package>java.awt</Package>
+                <Package>java.awt.event</Package>
+                <Package>java.io</Package>
+                <Package>java.lang</Package>
+                <Package>java.util</Package>
+                <Package>javax.swing</Package>
+                <Package>main.java.retriever</Package>
+                <Package>org.json.simple</Package>
+            </DependsUpon>
+
+            <UsedBy>
+                <Package>main.java</Package>
+            </UsedBy>
+        </Package>
+
+        <Package name="main.java.retriever">
+            <Stats>
+                <TotalClasses>4</TotalClasses>
+                <ConcreteClasses>4</ConcreteClasses>
+                <AbstractClasses>0</AbstractClasses>
+                <Ca>1</Ca>
+                <Ce>8</Ce>
+                <A>0</A>
+                <I>0.89</I>
+                <D>0.11</D>
+                <V>1</V>
+            </Stats>
+
+            <AbstractClasses>
+            </AbstractClasses>
+
+            <ConcreteClasses>
+                <Class sourceFile="CityFinder.java">
+                    main.java.retriever.CityFinder
+                </Class>
+                <Class sourceFile="DetailController.java">
+                    main.java.retriever.DetailController
+                </Class>
+                <Class sourceFile="MainController.java">
+                    main.java.retriever.MainController
+                </Class>
+                <Class sourceFile="WeatherRetriever.java">
+                    main.java.retriever.WeatherRetriever
+                </Class>
+            </ConcreteClasses>
+
+            <DependsUpon>
+                <Package>java.io</Package>
+                <Package>java.lang</Package>
+                <Package>java.net</Package>
+                <Package>java.text</Package>
+                <Package>java.util</Package>
+                <Package>me.xdrop.fuzzywuzzy</Package>
+                <Package>org.json.simple</Package>
+                <Package>org.json.simple.parser</Package>
+            </DependsUpon>
+
+            <UsedBy>
+                <Package>main.java.component</Package>
+            </UsedBy>
+        </Package>
+
+        <Package name="me.xdrop.fuzzywuzzy">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="org.json.simple">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="org.json.simple.parser">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+    </Packages>
+
+    <Cycles>
+    </Cycles>
+</JDepend>

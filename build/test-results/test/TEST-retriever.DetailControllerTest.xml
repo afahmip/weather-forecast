@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="retriever.DetailControllerTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2018-07-07T03:33:04" hostname="fahmi-pc" time="0.027">
+<testsuite name="retriever.DetailControllerTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2018-07-07T04:31:30" hostname="fahmi-pc" time="0.105">
   <properties/>
-  <testcase name="testGetDailyPressure" classname="retriever.DetailControllerTest" time="0.002"/>
+  <testcase name="testGetDailyPressure" classname="retriever.DetailControllerTest" time="0.003"/>
   <testcase name="testGetDailyCloud" classname="retriever.DetailControllerTest" time="0.001"/>
-  <testcase name="testGetDailyMonth" classname="retriever.DetailControllerTest" time="0.016"/>
-  <testcase name="testGetDailyWeatherMain" classname="retriever.DetailControllerTest" time="0.001"/>
-  <testcase name="testGetDateTime" classname="retriever.DetailControllerTest" time="0.0"/>
-  <testcase name="testGetDailyWindSpeed" classname="retriever.DetailControllerTest" time="0.001"/>
-  <testcase name="testGetDailyHumidity" classname="retriever.DetailControllerTest" time="0.0"/>
-  <testcase name="testGetDailyDate" classname="retriever.DetailControllerTest" time="0.001"/>
-  <testcase name="testGetDailyTemp" classname="retriever.DetailControllerTest" time="0.001"/>
-  <testcase name="testGetDailyYear" classname="retriever.DetailControllerTest" time="0.0"/>
-  <testcase name="testGetCityName" classname="retriever.DetailControllerTest" time="0.0"/>
+  <testcase name="testGetDailyMonth" classname="retriever.DetailControllerTest" time="0.078"/>
+  <testcase name="testGetDailyWeatherMain" classname="retriever.DetailControllerTest" time="0.002"/>
+  <testcase name="testGetDateTime" classname="retriever.DetailControllerTest" time="0.002"/>
+  <testcase name="testGetDailyWindSpeed" classname="retriever.DetailControllerTest" time="0.002"/>
+  <testcase name="testGetDailyHumidity" classname="retriever.DetailControllerTest" time="0.001"/>
+  <testcase name="testGetDailyDate" classname="retriever.DetailControllerTest" time="0.002"/>
+  <testcase name="testGetDailyTemp" classname="retriever.DetailControllerTest" time="0.003"/>
+  <testcase name="testGetDailyYear" classname="retriever.DetailControllerTest" time="0.002"/>
+  <testcase name="testGetCityName" classname="retriever.DetailControllerTest" time="0.001"/>
   <testcase name="testGetDailyWeatherDetail" classname="retriever.DetailControllerTest" time="0.001"/>
-  <testcase name="testGetDailyDayFull" classname="retriever.DetailControllerTest" time="0.0"/>
+  <testcase name="testGetDailyDayFull" classname="retriever.DetailControllerTest" time="0.001"/>
   <testcase name="testGetDailyDaySimplified" classname="retriever.DetailControllerTest" time="0.001"/>
   <testcase name="testGetDailyWindDirection" classname="retriever.DetailControllerTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>

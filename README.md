@@ -53,7 +53,6 @@ src
 The source code is divided into two packages. One is package _component_ that stores interface component, and package _model_ that stores weather model. Package _component_ consists of class **MainFrame** (the main window), class **MainPanel** (panel that holds DetailPanel and SearchPanel as well as other interacting buttons), class **DetailPanel** (panel that show weather details), and class **SearchPanel** (panel that has search input and feature). Package _retriever_ consists of class **WeatherRetriever** that handles weather scrapping data from OpenWeatherMap API, class **DetailController** which preprocess raw JSON data and returns any attributes that are needed, class **MainController** which handles data interraction between components, and class **CityFinder** which returns city ID from given city name.
 
 ## Class / Feature Checklist
-**_subject to change_**
 
 <table>
 <tbody>
@@ -114,16 +113,122 @@ The source code is divided into two packages. One is package _component_ that st
 </tbody>
 </table>
 
-## How to Install  
+## JDepend Result
+
+You can as well see the detailed result on ```build/reports/jdepend/main.xml```
+<table style="width: 507px; height: 249px;" border="1">
+<tbody>
+<tr>
+<td style="width: 142px;">&nbsp;Attr. \ Package name</td>
+<td style="width: 87px;">main.java&nbsp;</td>
+<td style="width: 148px;">main.java.component&nbsp;</td>
+<td style="width: 129px;">main.java.retriever&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 142px;">TC&nbsp;</td>
+<td style="width: 87px;">1</td>
+<td style="width: 148px;">7&nbsp;</td>
+<td style="width: 129px;">4&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 142px;">CC</td>
+<td style="width: 87px;">1&nbsp;</td>
+<td style="width: 148px;">7&nbsp;</td>
+<td style="width: 129px;">4&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 142px;">AC&nbsp;</td>
+<td style="width: 87px;">0&nbsp;</td>
+<td style="width: 148px;">0&nbsp;</td>
+<td style="width: 129px;">0&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 142px;">Ca&nbsp;</td>
+<td style="width: 87px;">0&nbsp;</td>
+<td style="width: 148px;">1&nbsp;</td>
+<td style="width: 129px;">1&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 142px;">Ce&nbsp;</td>
+<td style="width: 87px;">2&nbsp;</td>
+<td style="width: 148px;">8&nbsp;</td>
+<td style="width: 129px;">8&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 142px;">A&nbsp;</td>
+<td style="width: 87px;">0&nbsp;</td>
+<td style="width: 148px;">0&nbsp;</td>
+<td style="width: 129px;">0&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 142px;">I</td>
+<td style="width: 87px;">1&nbsp;</td>
+<td style="width: 148px;">0.89&nbsp;</td>
+<td style="width: 129px;">0.89&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 142px;">D&nbsp;</td>
+<td style="width: 87px;">0&nbsp;</td>
+<td style="width: 148px;">0.11&nbsp;</td>
+<td style="width: 129px;">0.11&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 142px;">V&nbsp;</td>
+<td style="width: 87px;">1&nbsp;</td>
+<td style="width: 148px;">1&nbsp;</td>
+<td style="width: 129px;">1&nbsp;</td>
+</tr>
+</tbody>
+</table>
+
+<!-- ## Installation -->
   
-  
-## How to Use  
+## How to Use
+
+<div>
+    <div>
+        <p>1. At first, the app will shows you the home screen. You can search for a city name on the search panel on the left side.</p>
+        <img src="https://github.com/ahmadfahmip/weather-forecast/tree/master/screenshot/1.jpg" alt="1"> <br>
+        <hr>
+    </div>
+    <div>
+        <p>2. After you press "find city" button, the app will search for weather forecast corresponding to the certain city. If the data is found, the detail panel on the right will show you the 5-day forecast data.</p>
+        <img src="https://github.com/ahmadfahmip/weather-forecast/tree/master/screenshot/2.jpg" alt="2"> <br>
+        <hr>
+    </div>
+    <div>
+        <p>3. You can also choose for any day you want, based on the available data by clicking the options on the bottom side.</p>
+        <img src="https://github.com/ahmadfahmip/weather-forecast/tree/master/screenshot/3.jpg" alt="3"> <br>
+        <hr>
+    </div>
+    <div>
+        <p>4. When you search for a city name, there may be multiple cities exists with similar name. The app will show you multiple city results for you to be chosen further.</p>
+        <img src="https://github.com/ahmadfahmip/weather-forecast/tree/master/screenshot/4.jpg" alt="4"> <br>
+        <hr>
+    </div>
+    <div>
+    <div>
+        <p>5. You can as well choose any city you want from the multiple results available, and have it shows the forecast data on the detail panel.</p>
+        <img src="https://github.com/ahmadfahmip/weather-forecast/tree/master/screenshot/5.jpg" alt="5"> <br>
+        <hr>
+    </div>
+    <div>
+        <p>6. If a certain city name doesn't exist on the database, the app will shows error message.</p>
+        <img src="https://github.com/ahmadfahmip/weather-forecast/tree/master/screenshot/6.jpg" alt="6"> <br>
+        <hr>
+    </div>
+</div>
   
   
 ## Reference  
-  
+
+- [JSON.simple 1.1.1](https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple/1.1.1)
+- [Intellij IDEA](https://www.jetbrains.com/idea/) (optional, for compiling)
   
 ## Author    
-Ahmad Fahmi Pratama <br>    
-Informatics Engineering at Institut Teknologi Bandung <br>    
-Visit my page [here](http://ahmadfahmi.me) <br>
+
+Ahmad Fahmi Pratama
+   
+Informatics Engineering at Institut Teknologi Bandung
+ 
+Visit my page [here](http://ahmadfahmi.me)

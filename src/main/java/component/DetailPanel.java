@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
 
 public class DetailPanel extends JPanel {
 
@@ -37,7 +38,8 @@ public class DetailPanel extends JPanel {
     showDailyDetails(obj);
     generateDailyPanels(list);
 
-    this.wallpaper = new ImageIcon("./src/resource/images/night.jpg").getImage();
+    String path = new File("src/main/resource/images/night.jpg").getAbsolutePath();
+    this.wallpaper = new ImageIcon(path).getImage();
     revalidate();
     repaint();
   }
@@ -91,7 +93,7 @@ public class DetailPanel extends JPanel {
     this.dailyDetailPanel.setLayout(null);
 
     JLabel tempLabel = new JLabel();
-    tempLabel.setText(this.detailController.getDailyTemp(obj) + "°c");
+    tempLabel.setText(this.detailController.getDailyTemp(obj) + "\u00b0c");
     tempLabel.setBounds(0,50, 300,80);
     tempLabel.setForeground(Color.white);
     tempLabel.setFont(new Font("Varela Round", Font.PLAIN, 60));
@@ -225,7 +227,7 @@ public class DetailPanel extends JPanel {
     panel.add(dateLabel);
 
     JLabel tempLabel = new JLabel();
-    tempLabel.setText(this.detailController.getDailyTemp(data) + "°c");
+    tempLabel.setText(this.detailController.getDailyTemp(data) + "\u00b0c");
     tempLabel.setBounds(5,75, 120,80);
     tempLabel.setForeground(Color.white);
     tempLabel.setFont(new Font("Varela Round", Font.PLAIN, 27));

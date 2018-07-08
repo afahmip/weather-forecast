@@ -21,7 +21,7 @@ public class CityFinderTest extends TestCase {
         ArrayList<JSONObject> array = new ArrayList<>();
 
         try {
-            Object obj = parser.parse(new FileReader("./src/resource/testdata/city_id_found.json"));
+            Object obj = parser.parse(new FileReader("./src/main/resource/testdata/city_id_found.json"));
             JSONArray jsonArray = (JSONArray) obj;
             array = (ArrayList<JSONObject>) jsonArray;
         } catch (FileNotFoundException e) {

@@ -181,7 +181,45 @@ You can as well see the detailed result on ```build/reports/jdepend/main.xml```
 </tbody>
 </table>
 
-<!-- ## Installation -->
+## Installation
+
+### Dependencies
+
+- [Gradle](https://gradle.org/install/)
+- [JSON.simple 1.1.1](https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple/1.1.1)
+- [Intellij IDEA](https://www.jetbrains.com/idea/) (optional, for compiling)
+
+Clone this repository first. And then, you can use Intellij IDEA to compile and run this app. Or if you don't want to use Intellij IDEA, you can follow these steps:
+
+#### With Gradle
+
+You need to install Gradle first. Then, run these commands:
+```
+gradle wrapper
+gradle run
+```
+
+#### Without Gradle
+
+For Linux users, run these commands:
+
+```
+# build the class files
+javac -cp .:lib/fuzzywuzzy-1.1.10.jar:lib/json-simple-1.1.jar:lib/junit-4.12.jar:lib/hamcrest-core-1.3.jar src/main/java/*.java src/main/java/component/*.java src/main/java/retriever/*.java -d out/production/classes
+
+# and then execute the program
+java -cp .:lib/fuzzywuzzy-1.1.10.jar:lib/json-simple-1.1.jar:lib/junit-4.12.jar:lib/hamcrest-core-1.3.jar:out/production/classes main.java.Main
+```
+
+For Windows users, run these commands:
+
+```
+# build the class files
+javac -cp ./lib/fuzzywuzzy-1.1.10.jar;./lib/json-simple-1.1.jar;./lib/junit-4.12.jar;./lib/hamcrest-core-1.3.jar src/main/java/*.java src/main/java/component/*.java src/main/java/retriever/*.java -d out/production/classes
+
+# and then execute the program
+java -cp ./lib/fuzzywuzzy-1.1.10.jar;./lib/json-simple-1.1.jar;./lib/junit-4.12.jar;./lib/hamcrest-core-1.3.jar;out/production/classes main.java.Main
+```
   
 ## How to Use
 
@@ -196,11 +234,6 @@ You can as well see the detailed result on ```build/reports/jdepend/main.xml```
 - You can as well choose any city you want from the multiple results available, and have it shows the forecast data on the detail panel. <br> ![5](https://github.com/ahmadfahmip/weather-forecast/blob/master/screenshot/5.jpg)
 
 - If a certain city name doesn't exist on the database, the app will shows error message. <br> ![6](https://github.com/ahmadfahmip/weather-forecast/blob/master/screenshot/6.jpg)
-  
-## Reference  
-
-- [JSON.simple 1.1.1](https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple/1.1.1)
-- [Intellij IDEA](https://www.jetbrains.com/idea/) (optional, for compiling)
   
 ## Author    
 

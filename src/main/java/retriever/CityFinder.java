@@ -6,6 +6,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -21,7 +22,8 @@ public class CityFinder {
     System.out.println("Loading file...");
 
     try {
-      Object obj = this.parser.parse(new FileReader("./src/resource/json/city.list.json"));
+      String path = new File("src/main/resource/json/city.list.json").getAbsolutePath();
+      Object obj = this.parser.parse(new FileReader(path));
       this.citylist = (JSONArray) obj;
       System.out.println(this.citylist.size());
     } catch (FileNotFoundException e) {

@@ -33,7 +33,7 @@ public class MainControllerTest extends TestCase {
                         try {
                             in.close();
                             // Print to file
-                            PrintWriter pw = new PrintWriter("src/resource/testdata/city_weather_data.json");
+                            PrintWriter pw = new PrintWriter("src/main/resource/testdata/city_weather_data.json");
                             pw.write(response.toString());
                             pw.flush();
                             pw.close();
@@ -62,7 +62,7 @@ public class MainControllerTest extends TestCase {
         JSONParser parser = new JSONParser();
         JSONObject data = new JSONObject();
         try {
-            Object obj = parser.parse(new FileReader("./src/resource/testdata/city_weather_data.json"));
+            Object obj = parser.parse(new FileReader("./src/main/resource/testdata/city_weather_data.json"));
             data = (JSONObject) obj;
         } catch (FileNotFoundException e) {
             System.out.println("Cannot find file!");

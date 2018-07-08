@@ -1,7 +1,6 @@
 package main.java.component;
 
 import main.java.component.MainPanel;
-
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
@@ -27,7 +26,8 @@ public class MainFrame extends JFrame {
   private void initFonts() {
     try {
       GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-      ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("src/resource/fonts/VarelaRound-Regular.ttf")));
+      String path = new File("src/main/resource/fonts/VarelaRound-Regular.ttf").getAbsolutePath();
+      ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(path)));
     } catch (IOException e) {
       e.printStackTrace();
     } catch(FontFormatException e) {

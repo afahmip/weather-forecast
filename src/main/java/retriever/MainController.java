@@ -5,6 +5,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -32,7 +33,8 @@ public class MainController {
     System.out.println("Parse data...");
 
     try {
-      weatherData = (JSONObject) parser.parse(new FileReader("./src/resource/json/result.json"));
+      String path = new File("src/main/resource/json/result.json").getAbsolutePath();
+      weatherData = (JSONObject) parser.parse(new FileReader(path));
     } catch (FileNotFoundException e) {
       System.out.println("Cannot find file!");
     } catch (ParseException e) {

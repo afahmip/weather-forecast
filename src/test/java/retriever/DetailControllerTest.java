@@ -29,7 +29,7 @@ public class DetailControllerTest extends TestCase {
     JSONParser parser = new JSONParser();
     this.dummyData = new JSONObject();
     try {
-      Object obj = parser.parse(new FileReader("./src/resource/testdata/city_single_data.json"));
+      Object obj = parser.parse(new FileReader("./src/main/resource/testdata/city_single_data.json"));
       this.dummyData = (JSONObject) obj;
     } catch (FileNotFoundException e) {
       System.out.println("Cannot find file!");
@@ -44,7 +44,7 @@ public class DetailControllerTest extends TestCase {
     JSONParser parser = new JSONParser();
     this.dummyCityIdentity = new JSONObject();
     try {
-      Object obj = parser.parse(new FileReader("./src/resource/testdata/city_identity.json"));
+      Object obj = parser.parse(new FileReader("./src/main/resource/testdata/city_identity.json"));
       this.dummyCityIdentity = (JSONObject) obj;
     } catch (FileNotFoundException e) {
       System.out.println("Cannot find file!");

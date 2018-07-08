@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="retriever.WeatherRetrieverTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-07-07T04:31:30" hostname="fahmi-pc" time="0.0">
+<testsuite name="retriever.WeatherRetrieverTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-07-08T04:44:58" hostname="DESKTOP-BTSIEQ3" time="0.001">
   <properties/>
   <testcase name="testGetCityId" classname="retriever.WeatherRetrieverTest" time="0.0"/>
   <testcase name="testGetGetUrl" classname="retriever.WeatherRetrieverTest" time="0.0"/>

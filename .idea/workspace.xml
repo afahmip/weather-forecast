@@ -2,25 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa915be5-c4df-437a-b184-001f2a6cf849" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/weatherforecast-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/weatherforecast-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/retriever.CityFinderTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/retriever.CityFinderTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/retriever.DetailControllerTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/retriever.DetailControllerTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/retriever.MainControllerTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/retriever.MainControllerTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/retriever.WeatherRetrieverTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/retriever.WeatherRetrieverTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/retriever.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/retriever.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-retriever.CityFinderTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-retriever.CityFinderTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-retriever.DetailControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-retriever.DetailControllerTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-retriever.MainControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-retriever.MainControllerTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-retriever.WeatherRetrieverTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-retriever.WeatherRetrieverTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/component/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/component/MainPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resource/json/result.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/resource/json/result.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resource/testdata/city_weather_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/resource/testdata/city_weather_data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/component/DetailPanel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/component/DetailPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/component/DetailPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/component/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/component/MainFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/component/MainPanel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/component/MainPanel$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/component/MainPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/component/MainPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/component/SearchPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/component/SearchPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/retriever/DetailController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/retriever/DetailController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/retriever/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/retriever/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/retriever/WeatherRetriever.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/retriever/WeatherRetriever.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/test/retriever/CityFinderTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/test/retriever/CityFinderTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/test/retriever/DetailControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/test/retriever/DetailControllerTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -45,7 +40,7 @@
     </projectState>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.68733853">
+    <splitter split-orientation="horizontal" split-proportion="0.8217054">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="DetailController.java" pinned="false" current-in-tab="false">
@@ -88,8 +83,8 @@
             <entry file="file://$PROJECT_DIR$/README.md">
               <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
                 <state split_layout="SPLIT">
-                  <first_editor relative-caret-position="14">
-                    <caret line="186" lean-forward="true" selection-start-line="186" selection-end-line="186" />
+                  <first_editor relative-caret-position="1170">
+                    <caret line="195" column="161" lean-forward="true" selection-start-line="195" selection-start-column="161" selection-end-line="195" selection-end-column="161" />
                   </first_editor>
                   <second_editor />
                 </state>
@@ -1298,8 +1293,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="14">
-            <caret line="186" lean-forward="true" selection-start-line="186" selection-end-line="186" />
+          <first_editor relative-caret-position="1170">
+            <caret line="195" column="161" lean-forward="true" selection-start-line="195" selection-start-column="161" selection-end-line="195" selection-end-column="161" />
           </first_editor>
           <second_editor />
         </state>
